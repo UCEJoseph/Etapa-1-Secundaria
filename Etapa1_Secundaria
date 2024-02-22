@@ -1,2 +1,56 @@
-Hola
-Holis
+import math
+import pandas as pd
+import matplotlib
+
+while True:
+    Wi = float(input("Ingrese el valor de Wi: "))
+    re = float(input("Ingrese el valor de re: "))
+    r = float(input("Ingrese el valor de r: "))
+    Iw = float(input("Ingrese el valor de Iw: "))
+    Iwp = float(input("Ingrese el valor de Iwp: "))
+    Dt = float(input("Ingrese el valor de Dt: "))
+    tT = float(input("Ingrese el valor de tT: "))
+
+    # Calculando variables basadas en las anteriores
+    if Wi != 0:
+        re = re / Wi
+    else:
+        print("Wi no puede ser cero. Intente de nuevo.")
+        continue
+
+    if re != 0:
+        r = r / re
+    else:
+        print("re no puede ser cero. Intente de nuevo.")
+        continue
+
+    if r != 0:
+        Iw = Iw / r
+    else:
+        print("r no puede ser cero. Intente de nuevo.")
+        continue
+
+    if Iw != 0:
+        Iwp = Iwp / Iw
+    else:
+        print("Iw no puede ser cero. Intente de nuevo.")
+        continue
+
+    if Iwp != 0:
+        Dt = Dt / Iwp
+    else:
+        print("Iwp no puede ser cero. Intente de nuevo.")
+        continue
+
+    if tT != 0:
+        resultado = Dt / tT
+    else:
+        print("tT no puede ser cero. Intente de nuevo.")
+        continue
+
+    print("El resultado es:", resultado)
+
+    # Condición para determinar si se repite el ciclo
+    respuesta = input("¿Desea repetir el proceso? (s/n): ")
+    if respuesta.lower() != 's':
+        break
