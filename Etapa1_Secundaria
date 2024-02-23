@@ -54,3 +54,37 @@ while True:
     respuesta = input("¿Desea repetir el proceso? (s/n): ")
     if respuesta.lower() != 's':
         break
+
+Ecuaciones:
+
+
+#H. Calculo del agua inyectada acumulada al breakthrough.
+Wibt = Vp*EAbt*(Swbt - Swc)
+
+# Wibt: Agua inyectada acumulada al breakthrough, Bbl.
+# Swbt: Saturación de agua average en la región de barrido al breakthrough, fracción.
+# Swc: Saturación de agua connata al inicio de la Inyección.
+
+#----------------------------Etapa 1-------------------------------------#
+#1
+# Tasa de inyección de agua durante la interferencia es:
+iw = (k*h*dP)/((uw/krw)*math.log(re/rw) + (uo/kro)*math.log(re/rw))
+
+# iw: Tasa de inyección de agua, BPD.
+# h: Espesor neto, ft.
+# k: Permeabilidad bases usada para definir la permeabilidad relativa, mD.
+# kro: Permeabilidad relativa del petróleo en bancos de petróleo a Swc.
+# krw: Permeabilidad relativa del agua en bancos de agua a Swbt.
+# r: Radio del banco de agua, ft.
+# re: Radio del banco de aceite, ft.
+# r'w: Radio efectivo del pozo. ft=rwe-si.
+# Si: Factor de daño pozo inyector.
+# ΔP: Diferencial de presión, psi.
+
+# Radio de los bancos de aceite:
+re = math.sqrt((5.615*Wi) / (math.pi*h*φ*Sg))
+
+# Wibt: Agua inyectada, Bbl.
+# h: Espesor neto, ft.
+# φ: Porosidad 
+# Sg: Saturación de gas al inicio de la inyección, fracción.  
