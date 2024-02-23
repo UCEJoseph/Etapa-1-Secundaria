@@ -87,4 +87,26 @@ re = math.sqrt((5.615*Wi) / (math.pi*h*φ*Sg))
 # Wibt: Agua inyectada, Bbl.
 # h: Espesor neto, ft.
 # φ: Porosidad 
-# Sg: Saturación de gas al inicio de la inyección, fracción.  
+# Sg: Saturación de gas al inicio de la inyección, fracción.
+
+
+    
+#Ecuacion_CGM_11
+
+# Calcular el lado izquierdo de la ecuación 
+lado_izquierdo = math.pi * r**2 * h * porosidad * (S_wbt - S_wc)
+
+# Calcular el lado derecho de la ecuación 
+lado_derecho = math.pi * r**2 * h * porosidad * S_g
+
+# Imprimir los resultados 
+print("Lado izquierdo:", lado_izquierdo)
+print("Lado derecho:", lado_derecho)
+
+#Ecuacion_CGM-12
+
+r_squared = r_e_squared * 2 * (S_g / (S_wbt - S_wc))
+
+#Ecuacion_CGM-13
+
+re = math.sqrt(Sg / (S_wbt - S_wc))
